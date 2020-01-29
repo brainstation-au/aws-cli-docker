@@ -1,2 +1,5 @@
 # aws-cli-docker
-A python docker container with AWS CLI
+A python docker image with AWS CLI
+
+## Supported tags
+- latest
