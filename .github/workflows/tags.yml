@@ -11,6 +11,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Find next tag and add the same
+        shell: bash
         run: |
           git fetch --depth=1 origin +refs/tags/*:refs/tags/*
           last_tag_sha=$(git rev-list --tags --max-count=1)
