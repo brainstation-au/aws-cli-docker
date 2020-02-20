@@ -2,7 +2,6 @@
 
 [![Docker build](https://img.shields.io/docker/cloud/build/brainstation/aws-cli?label=build&logo=docker)](https://hub.docker.com/r/brainstation/aws-cli/builds)
 ![Docker Pulls](https://img.shields.io/docker/pulls/brainstation/aws-cli.svg?label=pulls&logo=docker)
-![MicroBadger Size](https://img.shields.io/microbadger/image-size/brainstation/aws-cli.svg)
 
 A python docker image with AWS CLI installed.
 
