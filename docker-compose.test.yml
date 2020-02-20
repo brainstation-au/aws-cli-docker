@@ -1,0 +1,9 @@
+version: '3.4'
+services:
+  sut:
+    build:
+      context: .
+      args:
+        - AWS_CLI_VERSION
+    command: |
+      bash -c -e "aws --version"
