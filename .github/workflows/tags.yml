@@ -2,7 +2,7 @@ name: sync-tags
 
 on:
   schedule:
-    - cron: '*/10 * * * *'
+    - cron: '0 * * * *'
 
 jobs:
   deploy:
@@ -22,9 +22,10 @@ jobs:
             | jq 'sort_by(.time)')
           last_tag_time=$(echo $awscli_tags | jq --arg last_tag $last_tag -r '.[] | select(.tag == $last_tag) | .time')
           next_tag=$(echo $awscli_tags | jq --arg last_tag_time $last_tag_time '[.[] | select(.time > $last_tag_time)]' | jq -r '.[0].tag')
-          if [[ "$next_tag" != "null" ]]; then
+          if [[ -n "$next_tag" ]] && [[ "$next_tag" != "null" ]]; then
             git config --local user.email "action@github.com"
             git config --local user.name "GitHub Action"
+            git commit --allow-empty -m "Trigger build for docker container with tag latest"
             git tag -a $next_tag -m "Automatic tag following AWS available release"
           fi
       - name: Push changes
