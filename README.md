@@ -5,6 +5,10 @@
 
 A python docker image with AWS CLI installed.
 
+Tags of this container represent the release of [aws-cli](https://github.com/aws/aws-cli).
+
+Whenever there is a new release available in [aws-cli](https://github.com/aws/aws-cli), the `latest` will be updated and a new tag will be added **within an hour**.
+
 ```shell
 docker run --rm -it brainstation/aws-cli aws --version
 ```
