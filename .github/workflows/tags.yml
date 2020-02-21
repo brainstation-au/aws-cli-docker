@@ -25,8 +25,8 @@ jobs:
           if [[ -n "$next_tag" ]] && [[ "$next_tag" != "null" ]]; then
             git config --local user.email "action@github.com"
             git config --local user.name "GitHub Action"
-            git commit --allow-empty -m "Trigger build for docker container with tag latest"
-            git tag -a $next_tag -m "Automatic tag following AWS available release"
+            git commit --allow-empty -m "Update docker images with aws/aws-cli@${next_tag}"
+            git tag -a $next_tag -m "Automatic tag following aws/aws-cli release"
           fi
       - name: Push changes
         uses: ad-m/github-push-action@master
