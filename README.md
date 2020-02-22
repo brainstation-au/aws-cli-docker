@@ -5,6 +5,8 @@
 
 A python docker image with AWS CLI installed.
 
+[Docker Hub](https://hub.docker.com/r/brainstation/aws-cli)
+
 Tags of this project represent the release tags of [aws-cli](https://github.com/aws/aws-cli). Whenever there is a new release tag available in [aws-cli](https://github.com/aws/aws-cli), the `latest` will be updated and the new tag will be added **within an hour**.
 
 ```shell
@@ -45,7 +47,8 @@ UserId=$(aws sts get-caller-identity | jq -r '.UserId')
 echo "My user id: $UserId"
 ```
 
-To be able to try this example you need to have valid credentials in `~/.aws/credentials`. You can set that with `aws configure` in your host machine.
+To be able to try this example you need to have valid credentials in `~/.aws/credentials` on your host machine. To set it up, you may follow the instruction [here](https://github.com/aws/aws-cli#getting-started).
+
 ```bash
 $ docker-compose run --rm who-am-i-1
 My user id: ABCDEFG3H5IJK4NXYAYJ4
